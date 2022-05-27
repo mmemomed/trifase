@@ -33,11 +33,18 @@ if conPuerto != 'None': #Una vez encontrado el arduino nos imprimira en que puer
 else:
     print('Error de Conexión')
 
-#RECOGE LOS DATOS Y LOS ALMACENA EN UNa lISTA
+#RECOGE LOS DATOS Y LOS ALMACENA EN UNA lISTA
 
 size = 200
-voltaje = []
-corriente = []
+voltaje = [] #lista para almacenar los datos de voltaje
+corriente = [] #Lista para almacenar los datos de corriente
 
 for i in range(size):
-    readline
+    linea = ser.readline() #Lectura de líneas de datos
+    string = linea.decode() #Transformar los datos a string
+    sep = string.split(",") 
+    voltaje.append(sep[1]) #Obtener el voltaje de esta línea
+    corriente.append(sep[2]) #Obtener la corriente de esta línea
+
+
+

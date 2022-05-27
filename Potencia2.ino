@@ -104,7 +104,7 @@ void loop()
   // -----------------------------------------------------------------------------
   // Envío de información por el puerto serie
   // -----------------------------------------------------------------------------
-  Serial.println("D");
+  // Serial.println("D");
   for (int i=0; i<mysize;i++)
   {
     Serial.print(mytime[i]);
