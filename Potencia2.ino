@@ -82,22 +82,22 @@ void loop()
     mytime[i]=micros();
     
     ADMUX=ADMUX0;                       // Selecciona Entrada A0
-    Voltaje1[i]=analogReadFast();        // Muestra de Voltaje Instantaneo
+    Voltajex[i]=analogReadFast();        // Muestra de Voltaje Instantaneo
             
     ADMUX=ADMUX1;                       // Selecciona Entrada A1
-    Corriente1[i]=analogReadFast();      // Muestra de Corriente Instantanea
+    Corrientex[i]=analogReadFast();      // Muestra de Corriente Instantanea
 
     ADMUX=ADMUX2;                       // Selecciona Entrada A2
-    Voltaje2[i]=analogReadFast();        // Muestra de Voltaje Instantaneo
+    Voltajey[i]=analogReadFast();        // Muestra de Voltaje Instantaneo
             
     ADMUX=ADMUX3;                       // Selecciona Entrada A3
-    Corriente2[i]=analogReadFast();      // Muestra de Corriente Instantanea
+    Corrientey[i]=analogReadFast();      // Muestra de Corriente Instantanea
 
     ADMUX=ADMUX4;                       // Selecciona Entrada A4
-    Voltaje3[i]=analogReadFast();        // Muestra de Voltaje Instantaneo
+    Voltajez[i]=analogReadFast();        // Muestra de Voltaje Instantaneo
             
     ADMUX=ADMUX5;                       // Selecciona Entrada A5
-    Corriente3[i]=analogReadFast();      // Muestra de Corriente Instantanea
+    Corrientez[i]=analogReadFast();      // Muestra de Corriente Instantanea
   }
 
 
@@ -111,22 +111,22 @@ void loop()
 
     //Cable x
     Serial.print(",");
-    Serial.print(Voltaje1[i],DEC);
+    Serial.print(Voltajex[i],DEC);
     Serial.print(",");
-    Serial.print(Corriente1[i],DEC);
+    Serial.print(Corrientex[i],DEC);
     Serial.print(",");
     
 
     //Cable y
-    Serial.print(Voltaje2[i],DEC);
+    Serial.print(Voltajey[i],DEC);
     Serial.print(",");
-    Serial.print(Corriente2[i],DEC);
+    Serial.print(Corrientey[i],DEC);
     Serial.print(",");
 
     //Cable z
-    Serial.print(Voltaje3[i],DEC);
+    Serial.print(Voltajez[i],DEC);
     Serial.print(",");
-    Serial.print(Corriente3[i],DEC);
+    Serial.print(Corrientez[i],DEC);
     Serial.println("/");
 
   //Se terminará viendo:
