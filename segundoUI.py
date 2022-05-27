@@ -6,11 +6,11 @@ from threading import Thread
 from tkinter import Tk,Frame,StringVar,Label,Button,Entry
 
 def obtpuerto(): #Obtiene todos los puertos disponibles
-    puertos = [port.device for port in serial.tools.list_ports.comports() ] #Variable with the available ports
+    puertos = serial.tools.list_ports.comports() #Variable with the available ports
     return puertos
 
 def encArduino(obtpuerto): #Determinara a que puerto esta conectado el arduino
-    commPort = 'Ninguno'
+    commPort = 'None'
     conexiones = len(obtpuerto)
 
     for i in range(0,conexiones):
@@ -27,7 +27,7 @@ puertosEnc = obtpuerto()
 conPuerto = encArduino(puertosEnc)
 
 if conPuerto != 'None': #Una vez encontrado el arduino nos imprimira en que puerto esta conectado
-    ser = serial.Serial(conPuerto, baudrate = 115200, timeout = 200)
+    ser = serial.Serial(conPuerto, baudrate = 115200, timeout = 1)
     print('Conectado al puerto: ' + conPuerto)
 else:
     print('Error de Conexión')
