@@ -7,16 +7,17 @@ for i in range(size):
 
 print("terminado")"""
 
-size = 10
+i = 0
 voltaje = []
 corriente = []
 
-for i in range(size):
+while i < 600:
     linea =input("Ingresa Dato: ")
     #string = linea.decode()
     sep = linea.split(",")
     voltaje.append(sep[1])
     corriente.append(sep[2])
+    i += 1
 
 print(voltaje)
 print(corriente)
