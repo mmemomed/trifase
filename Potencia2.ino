@@ -9,12 +9,12 @@
 #define mysize 200
 
 unsigned long mytime[mysize];
-byte Voltaje1[mysize];
-byte Corriente1[mysize];
-byte Voltaje2[mysize];
-byte Corriente2[mysize];
-byte Voltaje3[mysize];
-byte Corriente3[mysize];
+byte Voltajex[mysize];
+byte Corrientex[mysize];
+byte Voltajey[mysize];
+byte Corrientey[mysize];
+byte Voltajez[mysize];
+byte Corrientez[mysize];
 byte ADMUX0;
 byte ADMUX1;
 byte ADMUX2;
