@@ -46,5 +46,7 @@ for i in range(size):
     voltaje.append(sep[1]) #Obtener el voltaje de esta línea
     corriente.append(sep[2]) #Obtener la corriente de esta línea
 
+#Hacer un if para saber si esta conectado que hacer
+#Que se rompa cuando se desconecte el arduino
 
 
