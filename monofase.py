@@ -39,6 +39,8 @@ size = 200
 voltaje = [] #lista para almacenar los datos de voltaje
 corriente = [] #Lista para almacenar los datos de corriente
 
+
+
 for i in range(size):
     linea = ser.readline() #Lectura de líneas de datos
     string = linea.decode() #Transformar los datos a string
