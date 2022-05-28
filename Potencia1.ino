@@ -114,7 +114,7 @@ void loop()
     Serial.print(Voltajex[i],DEC);
     Serial.print(",");
     Serial.print(Corrientex[i],DEC);
-    Serial.print(",");
+    //Serial.print(",");
     
     /*
     //Cable y
