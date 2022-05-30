@@ -55,9 +55,11 @@ while True:
 
     time.sleep(1)
 
-print('Terminado')
-print(temperatura)
-print(humedad)
+#print('Terminado')
+#print(temperatura)
+#print(humedad)
+
+    
 
 
 

@@ -23,7 +23,7 @@ while i < 10:
 print(voltaje)
 print(corriente)
 """
-
+'''
 import serial, serial.tools.list_ports #Library to identify the ports
 import time
 
@@ -55,6 +55,13 @@ if conPuerto != "None": #Una vez encontrado el arduino nos imprimira en que puer
 else:
     print('Error de Conexión')
 
+
+linea = ser.readline()
+string = linea.decode()
+print(string)
+#sep = string.split(',')
+
+
 x=0
 
 
@@ -72,3 +79,43 @@ while True:
 print("Desconectado")
 
 
+
+humedad = []
+temperatura = []
+
+num = input("Ingrese datos: ")
+ser = str(num)
+sep = ser.split(',')
+pvar = float(sep[1])
+svar = float(sep[2])
+humedad.append(pvar)
+temperatura.append(svar)
+
+
+print(temperatura)
+print(humedad)
+'''
+
+import matplotlib.pyplot as plt
+import numpy as np
+
+
+
+datos = []
+plt.axis([0,10,0,1])
+
+
+
+for i in range(10):
+    y = np.random.random()
+    plt.scatter(i,y)
+    plt.pause(0.5)
+
+plt.show()
+
+
+
+
+
+
+    
