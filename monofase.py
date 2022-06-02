@@ -1,7 +1,9 @@
 #Obtención de datos de un motor trifásico
 
 import serial, serial.tools.list_ports #Library to identify the ports
-import time
+import time 
+import matplotlib.pyplot as plt
+from matplotlib.animation import FuncAnimation
 
 # ESTABLECER EL PUERTO AL QUE ESTÁ CONECTADO EL ARDUINO
 
@@ -34,8 +36,35 @@ else:
     print('Error de Conexión')
 
 #RECOGE LOS DATOS Y LOS ALMACENA EN UNA lISTA
+#voltajex = []
+#corrientex = []
+
+#voltajey = []
+#corrientey = []
+
+#voltajez = []
+#corrientez = []
+
 temperatura = [] #lista para almacenar los datos de voltaje
 humedad = [] #Lista para almacenar los datos de corriente
+tiempo = []
+tiempo2 = []
+
+'''def graf1(i):
+    sep = string.split(',')
+    h1 = float(sep[1])
+    c1 = float(sep[2])
+    t1 = int(sep[0])
+    tiempo.append(t1)
+    humedad.append(h1)
+    temperatura.append(c1)
+    plt.cla()
+    plt.plot(tiempo,humedad)
+    plt.plot(tiempo, temperatura)
+    plt.xlabel("Tiempo")
+    plt.xlabel("Temperatura/Humedad")
+    plt.tight_layout()'''
+
 
 while True:    
     puertosEnc = obtpuerto()
@@ -46,18 +75,46 @@ while True:
     string = linea.decode()
     if string != '':
         sep = string.split(',')
-        pvar = float(sep[1])
-        svar = float(sep[2])
-        humedad.append(pvar)
-        temperatura.append(svar)
-        #print(pvar)
-        #print(svar)
+        pvar = float(sep[0])
+        svar = float(sep[1])
+        tvar = float(sep[2])
+        tiempo.append(pvar)
+        tiempo2.append(pvar)
+        humedad.append(svar)
+        temperatura.append(tvar)
 
+    print()
     time.sleep(1)
 
-#print('Terminado')
-#print(temperatura)
-#print(humedad)
+
+'''
+while True:
+    data = ser.readline()
+    string = data.decode()
+    if string != '':
+        sep = string.split(',')
+        pvar = float(sep[0])
+        svar = float(sep[1])
+        tvar = float(sep[2])
+        tiempo.append(pvar)
+        tiempo2.append(pvar)
+        humedad.append(svar)
+        temperatura.append(tvar)
+        plt.scatter(tiempo, humedad)
+        plt.show()
+        plt.pause(1)'''
+
+
+
+
+
+    
+
+
+    
+#anim1 = FuncAnimation(plt.gcf(), graf1, interval = 1000)
+#plt.show()
+
 
     
 
@@ -71,6 +128,3 @@ for i in range(size):
     voltaje.append(sep[1]) #Obtener el voltaje de esta línea
     corriente.append(sep[2]) #Obtener la corriente de esta línea
 '''
-
-
-

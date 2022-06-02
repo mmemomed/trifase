@@ -45,7 +45,6 @@ else:
 #OBTENER LOS DATOS DEL ARDUINO
 
 #Establecemos las variables que recibimos de arduino
-size = 200
 
 voltaje_x = []
 voltaje_y = []
@@ -54,12 +53,40 @@ voltaje_z = []
 corriente_x = []
 corriente_y = []
 corriente_z = []
-
-
-i = 0
-for i in range(size):
-    line = ser.readline(1) #leer la línea de 8 bits/1 byte
-    if line:
-        string = line.decode()
-        
     
+#VOLTAJE RMS
+#CORRIENTE RMS
+#POTENCIA ACTIVA
+#POTENCIA REACTIVA
+#POTENCIA APARENTE
+#ENERGÍA
+#COSTO
+
+while True:
+    puertosEnc = obtpuerto()
+    conPuerto = encArduino()
+    if conPuerto == "None":
+        break
+    linea = ser.readline()
+    string = linea.decode()
+    if string != '':
+        sep = string.split(',')
+        pvar = float(sep[1])
+        svar = float(sep[2])
+        tvar = float(sep[3])
+        cvar = float(sep[4])
+        qvar = float(sep[5])
+        svar = float(sep[6])
+        voltaje_x.append(pvar)
+        corriente_x.append(svar)
+        voltaje_y.append(tvar)
+        corriente_y.append(cvar)
+        voltaje_z.append(qvar)
+        corriente_z.append(svar)
+        #Calcular las demás variables que se mencionan arriba
+        #Graficar variables?
+        #Se puede hacer una gráfica para cada función según se elija en tkinter
+        #Así solo se llamaría una a la vez\
+
+        
+
